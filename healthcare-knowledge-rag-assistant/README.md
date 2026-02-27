@@ -44,7 +44,7 @@ uvicorn app.main:app --reload
 
 ```bash
 docker build -t healthcare-assistant .
-docker run -p 8000:8000 -e API_KEY=test-key-12345 healthcare-assistant
+docker run -p 8000:8000 -e API_KEY=TEST-API-SW56-3451 healthcare-assistant
 ```
 
 Service runs at `http://localhost:8000`.
