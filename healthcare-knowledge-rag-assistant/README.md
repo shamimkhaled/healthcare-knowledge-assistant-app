@@ -23,11 +23,16 @@ git clone https://github.com/shamimkhaled/healthcare-knowledge-assistant-app.git
 ## Setup
 
 ```bash
+python -m venv venv
+source venv/bin/activate (Linux/Mac)
+```
+
+```bash
 pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `API_KEY` in `.env` (e.g. `API_KEY=TEST-API-SW56-3451`).
+Set `API_KEY` in `.env` ( such as `API_KEY=TEST-API-SW56-3451`).
 
 ## Run locally
 
