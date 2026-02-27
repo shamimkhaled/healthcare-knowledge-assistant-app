@@ -22,6 +22,11 @@ git clone https://github.com/shamimkhaled/healthcare-knowledge-assistant-app.git
 
 ## Setup
 
+
+```bash
+cd healthcare-knowledge-rag-assistant
+```
+
 ```bash
 python -m venv venv
 source venv/bin/activate (Linux/Mac)
