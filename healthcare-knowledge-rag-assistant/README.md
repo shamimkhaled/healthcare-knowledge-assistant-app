@@ -40,6 +40,13 @@ Set `API_KEY` in `.env` ( such as `API_KEY=TEST-API-SW56-3451`).
 uvicorn app.main:app --reload
 ```
 
+**Build and run locally with Docker:**
+
+```bash
+docker build -t healthcare-assistant .
+docker run -p 8000:8000 -e API_KEY=test-key-12345 healthcare-assistant
+```
+
 Service runs at `http://localhost:8000`.
 
 ## API with response
