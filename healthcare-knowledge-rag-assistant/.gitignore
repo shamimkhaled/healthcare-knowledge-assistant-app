@@ -2,7 +2,15 @@ __pycache__/
 *.pyc
 .env
 faiss_index/
+metadata.pkl
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+faiss_index/
 *.faiss
 *.pkl
 .venv/
 venv/
+/

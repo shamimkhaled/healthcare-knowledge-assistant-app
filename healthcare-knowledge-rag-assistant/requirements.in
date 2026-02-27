@@ -4,5 +4,6 @@ faiss-cpu
 sentence-transformers
 langdetect
 googletrans  
+deep-translator
 python-multipart          
 pydantic-settings

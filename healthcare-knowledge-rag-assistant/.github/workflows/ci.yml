@@ -18,10 +18,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
+        working-directory: healthcare-knowledge-rag-assistant
         run: pip install -r requirements.txt
 
       - name: Lint
+        working-directory: healthcare-knowledge-rag-assistant
         run: pip install ruff && ruff check app/
 
       - name: Build Docker image
-        run: docker build -t healthcare-assistant .
+        run: docker build -t healthcare-assistant -f healthcare-knowledge-rag-assistant/Dockerfile healthcare-knowledge-rag-assistant

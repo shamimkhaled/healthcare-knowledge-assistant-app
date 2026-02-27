@@ -13,7 +13,7 @@ def embedding_texts(texts: list[str], model=None) -> list[list[float]]:
     model = model or get_embedding_model()
     return model.encode(texts).tolist()
 
-def embedding_single(text: strr) -> list[float]:
+def embedding_single(text: str) -> list[float]:
     return embedding_texts([text])[0]
 
 

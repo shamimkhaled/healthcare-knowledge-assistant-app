@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "Healthcare Knowledge RAG Assistant",
+    "description": "Postman collection for ingest, retrieve, and generate endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "apiKey",
+      "value": "test-api-key-12345"
+    }
+  ],
+  "item": [
+    {
+      "name": "Ingest Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{apiKey}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/home/shamimkhaled/llm-engineer/healthcare-knowledge-rag-assistant/data/sample.txt"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ingest",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ingest"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Retrieve",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{apiKey}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/retrieve?query=diabetes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "retrieve"
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "diabetes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Generate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{apiKey}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"What are the latest recommendations for Type 2 diabetes management?\",\n  \"output_language\": \"ja\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "generate"
+          ]
+        }
+      }
+    }
+  ]
+}
